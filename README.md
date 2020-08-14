@@ -15,7 +15,7 @@ This repository creates a fabric network with 2 organizations to demonstrate a s
 3. Deploy the chaincode
 
 ```bash
-./network.sh deployCC
+./network.sh deployCC -l javascript
 ```
 
 This should start the network and install the javascript chaincode on all the peers. You can now make the transactions as required.
