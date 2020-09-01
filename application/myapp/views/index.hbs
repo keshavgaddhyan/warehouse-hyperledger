@@ -1,0 +1,56 @@
+<div class="display-flex justify-content-flex-end">
+    <a href="{{#if filter}}/{{else}}/?filter=true{{/if}}" class="mdc-button {{#if filter}}mdc-button--unelevated{{else}}mdc-button--outlined{{/if}}">
+        {{#if filter}}
+            <span class="mdc-button__label">Show All</span>
+        {{else}}
+            <span class="mdc-button_label">Show Incomplete only</span>
+        {{/if}}
+    </a>
+</div>
+<div class="display-flex">
+    <div class="mdc-form-field width-100">
+        <div class="mdc-text-field width-100">
+            <form method="GET" action="/" class="width-100">
+                <input type="text" id="search" name="search" class="mdc-text-field__input width-100" value="{{search}}">
+                <label class="mdc-floating-label" for="search">Search</label>
+                <div class="mdc-line-ripple width-100"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell">
+            <div class="mdc-card">
+                <div class="mdc-card__actions">
+                    <a href="/products/create" class="mdc-button mdc-card__action mdc-card__action--button">
+                        <span>Add New Product</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{#each products}}
+            <div class="mdc-layout-grid__cell">
+                <div class="mdc-card">
+                    <div class="mdc-card__content">
+                        <div class="mdc-card__title">
+                            Name: {{name}}
+                        </div>
+                        <div>
+                            Description: {{description}}
+                        </div>
+                        <div>
+                            Status: {{status}}
+                        </div>
+                    </div>
+                    
+                    <div class="mdc-card__actions">
+                        <button class="mdc-button mdc-card__action mdc-card__action--button">
+                            <a href="/products/{{ProductId}}">Detailed View</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<form method="post">
+    <div class="mdc-form-field">
+        <div class="mdc-text-field">
+            <input type="text" id="name" name="name" class="mdc-text-field__input">
+            <label class="mdc-floating-label" for="name">Enter Product Name</label>
+            <div class="mdc-line-ripple"></div>
+        </div>
+    </div>
+    <div class="mdc-text-field mdc-text-field--textarea">
+        <textarea id="textarea" class="mdc-text-field__input" rows="8" cols="40" name="description"></textarea>
+        <div class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+            <label for="textarea" class="mdc-floating-label">Description</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+        </div>
+    </div>
+    <div class="mdc-form-field">
+        <div class="mdc-text-field">
+            <input type="text" id="name" name="stages" class="mdc-text-field__input">
+            <label class="mdc-floating-label" for="stages">Signatures required</label>
+            <div class="mdc-line-ripple"></div>
+        </div>
+    </div>
+    <div class="mdc-form-group">
+        <div class="mdc-select">
+            <i class="mdc-select__dropdown-icon"></i>
+            <select class="mdc-select__native-control" name="identity">
+                <option value="" disabled selected></option>
+                {{#each users}}
+                    <option value="{{label}}">{{label}}</option>
+                {{/each}}
+            </select>
+            <label class="mdc-floating-label">Pick a User</label>
+            <div class="mdc-line-ripple"></div>
+        </div>
+    </div>
+    
+    <div class="mdc-form-group">
+        <button class="mdc-button mdc-button--raised" type="submit">
+            <span class="mdc-button__label">Create</span>
+        </button>
+    </div>
+    
+</form>
+
+<a href="/">Back</a>

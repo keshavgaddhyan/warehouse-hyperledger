@@ -53,7 +53,7 @@ services:
       - "9054:9054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - .../organizations/fabric-ca/ordererOrg:/etc/hyperledger/fabric-ca-server
+      - ../organizations/fabric-ca/ordererOrg:/etc/hyperledger/fabric-ca-server
     container_name: ca_orderer
     networks:
       - test
